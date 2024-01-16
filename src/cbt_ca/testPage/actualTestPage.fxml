@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbt_ca.testPage.ActualTestPageController">
+   <left>
+      <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="200.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="160.0" spacing="10.0" style="-fx-background-color: #2a3a6e;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="NEVER">
+               <image>
+                  <Image url="@../../../../../Java_CBT/logo-150x150.png" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="60.0" top="30.0" />
+               </VBox.margin>
+            </ImageView>
+            <Label fx:id="timeTextLabel" text="Time" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="actualTimeValue" text="16:30" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="48.0" />
+               </font>
+            </Label>
+            <Pane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+            <VBox fx:id="closeQuizButton" alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#closeTestQuiz" onMousePressed="#closeTextPage" prefHeight="120.0" spacing="15.0" style="-fx-background-color: white;" styleClass="closeButton" stylesheets="@actualtestpage.css">
+               <children>
+                  <Label fx:id="closeQuizLabel" text="Close Quiz">
+                     <font>
+                        <Font name="Segoe UI Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <VBox alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" style="-fx-background-color: #D41414; -fx-background-radius: 200;">
+                     <children>
+                        <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" size="25">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
+                           </VBox.margin>
+                        </FontAwesomeIconView>
+                     </children>
+                  </VBox>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <top>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="header" stylesheets="@actualtestpage.css" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" spacing="10.0">
+                     <children>
+                        <Label fx:id="matNumber" text="Matriculation Number: 21 12 06 1 2475">
+                           <font>
+                              <Font name="Segoe UI Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="coutseTitle" text="Course Title: Introduction To Computer Programming I">
+                           <font>
+                              <Font name="Segoe UI Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="courseCode" text="Couse Code: CSC 101">
+                           <font>
+                              <Font name="Segoe UI Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="date" text="Date: 2nd January 2024">
+                           <font>
+                              <Font name="Segoe UI Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="duration" text="Duration: 2 hours 30 minutes">
+                           <font>
+                              <Font name="Segoe UI Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="statButton" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#startTheTest" prefHeight="100.0" prefWidth="150.0" styleClass="buttonStyle" stylesheets="@../admin_dashboard/admin_page.css" text="Start Test">
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Segoe UI" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" top="20.0" />
+               </padding>
+            </HBox>
+         </top>
+         <center>
+            <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox fx:id="instructionBox" prefHeight="200.0" prefWidth="100.0" spacing="15.0">
+                     <children>
+                        <Label text="Instructions">
+                           <font>
+                              <Font name="Segoe UI Bold" size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Pick from the options labelled A - D">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="Use the next or previous buttons to navigate through the questions">
+                           <font>
+                              <Font name="Segoe UI" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="When you are done, click on the submit button, your script will automatically be graded">
+                           <font>
+                              <Font name="Segoe UI" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="Good Luck!!!!">
+                           <font>
+                              <Font name="Segoe UI" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="30.0" top="30.0" />
+                     </padding>
+                  </VBox>
+                  <VBox fx:id="questionBox" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" prefHeight="200.0" spacing="30.0" visible="false" StackPane.alignment="CENTER">
+                     <children>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" style="-fx-background-color: #ececec; -fx-background-radius: 10;">
+                           <children>
+                              <Label fx:id="questionNumber" text="Question 12">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Text fx:id="actualQuestion" lineSpacing="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum elementum faucibus vulputate. Praesent at rhoncus tortor, eget convallis ligula. Donec suscipit ipsum turpis, ut porta orci commodo non. Sed imperdiet ornare nunc, et dictum elit euismod vel. Quisque semper vel purus vitae venenatis. Duis eget urna nec dolor euismod eleifend sit amet at enim. Aliquam erat volutpat. Donec eget magna congue, sollicitudin est at, varius nibh. Fusce a convallis dolor, sed blandit nisi." wrappingWidth="700.0">
+                                 <font>
+                                    <Font name="Segoe UI" size="16.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                           <padding>
+                              <Insets bottom="30.0" left="20.0" right="20.0" top="30.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </VBox>
+                        <VBox spacing="30.0">
+                           <children>
+                              <HBox prefWidth="200.0">
+                                 <children>
+                                    <RadioButton fx:id="optionA" lineSpacing="2.0" maxWidth="400.0" mnemonicParsing="false" onAction="#getSelected" text="Proin in posuere libero, eget blandit nibh. Fusce et mauris bibendum, euismod elit sed, gravida lacus. Aliquam sed sagittis nibh." wrapText="true">
+                                       <font>
+                                          <Font name="Segoe UI" size="16.0" />
+                                       </font>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="options" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <Pane prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                    <RadioButton fx:id="optionB" maxWidth="400.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#getSelected" text="Option B" toggleGroup="$options" wrapText="true">
+                                       <font>
+                                          <Font name="Segoe UI" size="16.0" />
+                                       </font>
+                                    </RadioButton>
+                                 </children>
+                              </HBox>
+                              <HBox prefWidth="200.0">
+                                 <children>
+                                    <RadioButton fx:id="optionC" maxWidth="400.0" mnemonicParsing="false" onAction="#getSelected" text="Option C" toggleGroup="$options" wrapText="true">
+                                       <font>
+                                          <Font name="Segoe UI" size="16.0" />
+                                       </font>
+                                    </RadioButton>
+                                    <Pane prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                    <RadioButton fx:id="optionD" maxWidth="400.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#getSelected" text="Option D" toggleGroup="$options" wrapText="true">
+                                       <font>
+                                          <Font name="Segoe UI" size="16.0" />
+                                       </font>
+                                    </RadioButton>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </VBox>
+                        <HBox maxWidth="-Infinity" prefWidth="500.0">
+                           <children>
+                              <Button fx:id="previousQuestion" alignment="CENTER" mnemonicParsing="false" onAction="#changeQuestion" prefHeight="80.0" prefWidth="150.0" style="-fx-background-color: #2a3a6e; -fx-text-fill: white; -fx-background-radius: 5;" text="Previous">
+                                 <font>
+                                    <Font name="Segoe UI" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Button>
+                              <Pane HBox.hgrow="ALWAYS" />
+                              <Button fx:id="nextQuestion" alignment="CENTER" mnemonicParsing="false" onAction="#changeQuestion" prefHeight="80.0" prefWidth="150.0" style="-fx-background-color: #2a3a6e; -fx-text-fill: white; -fx-background-radius: 5;" text="Next">
+                                 <font>
+                                    <Font name="Segoe UI" size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                     <StackPane.margin>
+                        <Insets />
+                     </StackPane.margin>
+                  </VBox>
+                  <VBox fx:id="testScorePart" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="30.0" visible="false">
+                     <children>
+                        <Label text="Test over">
+                           <font>
+                              <Font name="Segoe UI Bold" size="28.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="testScoreText" text="Your total score is: ">
+                           <font>
+                              <Font name="Segoe UI" size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" spacing="20.0">
+                           <children>
+                              <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#closeTestContainer" prefHeight="80.0" prefWidth="150.0" style="-fx-background-color: #f32013; -fx-text-fill: white; -fx-background-radius: 5;" text="Close Test">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#viewTestScript" prefHeight="80.0" prefWidth="150.0" style="-fx-background-color: #57618B; -fx-text-fill: white; -fx-background-radius: 5;" text="View Script">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </StackPane>
+         </center>
+      </BorderPane>
+   </center>
+</BorderPane>

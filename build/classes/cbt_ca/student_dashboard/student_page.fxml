@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbt_ca.student_dashboard.Student_pageController">
+   <children>
+      <BorderPane fx:id="studentFormContainerBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0">
+         <left>
+            <VBox alignment="CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="250.0" style="-fx-background-color: #57618B;" BorderPane.alignment="TOP_LEFT">
+               <children>
+                  <VBox alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="200.0" spacing="10.0" style="-fx-background-color: white;" styleClass="border_top" stylesheets="@../admin_dashboard/admin_page.css">
+                     <children>
+                        <StackPane fx:id="userImage" onMousePressed="#setProfilePicture" prefHeight="0.0" prefWidth="200.0">
+                           <children>
+                              <Circle fx:id="profile_photo" fill="#57618b" radius="50.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                              <Circle fill="DODGERBLUE" radius="55.0" stroke="#aeaeae" strokeType="INSIDE" style="-fx-fill: transparent;" />
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </StackPane>
+                        <Label fx:id="fullName" text="Katniss Everdeen">
+                           <font>
+                              <Font name="Segoe UI Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="emailAddress" text="katniss.everdeen@pau.edu,ng" textFill="#aeaeae">
+                           <font>
+                              <Font name="Segoe UI" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Separator prefWidth="200.0" />
+                     </children>
+                     <padding>
+                        <Insets top="35.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="200.0" spacing="20.0" styleClass="white_background" stylesheets="@../admin_dashboard/admin_page.css">
+                     <children>
+                        <HBox fx:id="test_button" alignment="CENTER_LEFT" maxWidth="-Infinity" minWidth="-Infinity" onMousePressed="#togglePage" prefWidth="180.0" spacing="10.0" stylesheets="@../admin_dashboard/admin_page.css">
+                           <children>
+                              <FontAwesomeIconView glyphName="FILE" size="20">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </FontAwesomeIconView>
+                              <Label text="Tests">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                           <styleClass>
+                              <String fx:value="tab" />
+                              <String fx:value="selected" />
+                           </styleClass>
+                        </HBox>
+                        <Pane VBox.vgrow="ALWAYS" />
+                        <Separator prefWidth="200.0" />
+                     </children>
+                     <padding>
+                        <Insets top="30.0" />
+                     </padding>
+                  </VBox>
+                  <VBox fx:id="logOutButton" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" onMousePressed="#logOutUser" prefWidth="200.0" stylesheets="@../admin_dashboard/admin_page.css">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="180.0" spacing="10.0" stylesheets="@../admin_dashboard/admin_page.css">
+                           <children>
+                              <FontAwesomeIconView fill="#d41414" glyphName="SIGN_OUT" size="25">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </FontAwesomeIconView>
+                              <Label text="Sign out" textFill="#d41414">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="25.0" top="25.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <styleClass>
+                        <String fx:value="white_background" />
+                        <String fx:value="signOut" />
+                        <String fx:value="border_bottom" />
+                     </styleClass>
+                  </VBox>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <BorderPane fx:id="testBorderPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ececec;">
+                     <top>
+                        <Label alignment="TOP_LEFT" text="Scheduled Tests" BorderPane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="Segoe UI Bold" size="24.0" />
+                           </font>
+                           <BorderPane.margin>
+                              <Insets bottom="20.0" left="30.0" top="50.0" />
+                           </BorderPane.margin>
+                        </Label>
+                     </top>
+                     <center>
+                        <ScrollPane fx:id="upcomingTestsScrollPane" hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="537.0" prefWidth="519.0" style="-fx-border-color: #ececec;" stylesheets="@../admin_dashboard/admin_page.css" vbarPolicy="NEVER" BorderPane.alignment="BOTTOM_LEFT">
+                           <BorderPane.margin>
+                              <Insets left="30.0" />
+                           </BorderPane.margin>
+                           <content>
+                              <StackPane maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="518.0" style="-fx-background-color: white;" styleClass="border_top" stylesheets="@../admin_dashboard/admin_page.css">
+                                 <children>
+                                    <VBox fx:id="upcomingTestsContainer" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" styleClass="border_top" stylesheets="@../admin_dashboard/admin_page.css">
+                                       <padding>
+                                          <Insets top="20.0" />
+                                       </padding>
+                                    </VBox>
+                                    <Label fx:id="noTestNotification" alignment="CENTER" contentDisplay="CENTER" prefHeight="535.0" prefWidth="518.0" text="No upcoming test" textAlignment="CENTER" visible="false" StackPane.alignment="CENTER">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                           </content>
+                        </ScrollPane>
+                     </center>
+                  </BorderPane>
+               </children>
+            </StackPane>
+         </center>
+      </BorderPane>
+      <VBox fx:id="errorDialogBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="300.0" spacing="15.0" style="-fx-background-color: white;" visible="false">
+         <children>
+            <VBox alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="10.0" prefWidth="10.0" style="-fx-background-color: white;">
+               <children>
+                  <FontAwesomeIconView fill="#da0f0f" glyphName="WARNING" size="50" text="" />
+               </children>
+            </VBox>
+            <Label text="Error">
+               <font>
+                  <Font name="Segoe UI Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="errorMessage" text="Invalid email or password">
+               <font>
+                  <Font name="Segoe UI Bold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Label>
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#closeErrorDialogBox" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #da0f0f;" styleClass="submit_button_style" stylesheets="@../login/login.css" text="Close" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <VBox fx:id="successDialogBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="300.0" spacing="15.0" style="-fx-background-color: white;" visible="false">
+         <children>
+            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="35.0" style="-fx-background-color: white;">
+               <children>
+                  <FontAwesomeIconView fill="#4bb543" glyphName="CHECK_CIRCLE" size="60" />
+               </children>
+            </VBox>
+            <Label text="Success">
+               <font>
+                  <Font name="Segoe UI Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="succcessMessage" text="Student registered successfully">
+               <font>
+                  <Font name="Segoe UI Bold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Label>
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#closeErrorDialogBox" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #4BB543;" styleClass="submit_button_style" stylesheets="@../login/login.css" text="Close" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <VBox fx:id="startTest" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="300.0" spacing="15.0" style="-fx-background-color: white;" visible="false">
+         <children>
+            <VBox alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="10.0" prefWidth="10.0" style="-fx-background-color: white;">
+               <children>
+                  <FontAwesomeIconView fill="#eed202" glyphName="WARNING" size="50" text="" />
+               </children>
+            </VBox>
+            <Label fx:id="errorMessage1" text="Are you ready to start the test ?">
+               <font>
+                  <Font name="Segoe UI Bold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Label>
+            <HBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="205.0">
+               <children>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#confirmTestSelection" prefHeight="50.0" prefWidth="90.0" style="-fx-background-color: #da0f0f;" styleClass="submit_button_style" stylesheets="@../login/login.css" text="No" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  <Pane prefWidth="200.0" />
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#confirmTestSelection" prefHeight="50.0" prefWidth="90.0" style="-fx-background-color: #4bb543;" styleClass="submit_button_style" stylesheets="@../login/login.css" text="Yes" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</StackPane>

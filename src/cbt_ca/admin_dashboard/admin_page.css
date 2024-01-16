@@ -1,0 +1,72 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+.border_top{
+    -fx-background-radius: 10 10 0 0;
+}
+
+.border_bottom{
+    -fx-background-radius: 0 0 10 10;
+}
+
+.buttonStyle{
+    -fx-background-radius: 50 0 0 0;
+}
+
+
+.white_background{
+    -fx-background-color: white;
+}
+
+.selected{
+    -fx-background-color: #57618B;
+    -fx-background-radius: 5 0 0 5;
+}
+
+.selected_tab{
+    -fx-background-color: white;
+    -fx-background-radius: 5 0 0 5;
+}
+.selected Label {
+    -fx-text-fill: white;
+}
+
+.selected FontAwesomeIconView {
+    -fx-fill: white;
+}
+
+.tab:hover{
+    -fx-background-color: #57618B;
+    -fx-background-radius: 5 0 0 5;
+}
+
+.tab:hover Label {
+    -fx-text-fill: white;
+}
+
+.tab:hover FontAwesomeIconView {
+    -fx-fill: white;
+}
+
+.signOut:hover{
+    -fx-background-color: #d41414;
+}
+
+.signOut:hover HBox Label{
+    -fx-text-fill: white;
+}
+
+.signOut:hover HBox FontAwesomeIconView{
+    -fx-fill: white;
+}
+
+.buttonStyle{
+    -fx-background-color: #57618B;
+    -fx-text-fill: white;
+    -fx-background-radius: 2;
+}

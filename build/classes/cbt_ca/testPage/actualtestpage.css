@@ -1,0 +1,14 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.header{
+    -fx-border-width: 0 0 5 0;
+    -fx-border-color: #ececec;
+    
+    
+}
+
+.closeButton:hover {
+    -fx-background-color: #D41414;
+}

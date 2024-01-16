@@ -1,0 +1,26 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Dec 17, 2023, 5:01:49 PM
+    Author     : HP PROBOOK 430 G3
+*/
+
+.image_left{
+    -fx-background-image: url('../images/other_college_girl_compressed.jpg');
+    -fx-background-size: cover;
+}
+
+.input_field{
+    -fx-background-color: transparent
+}
+
+.input_container{
+    -fx-border-color: #aeaeae;
+    -fx-border-radius: 2px;
+}
+
+.submit_button_style{
+    -fx-border-radius: 2px;
+}

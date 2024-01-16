@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="card" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="570.0" style="-fx-background-color: #ececec;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbt_ca.components.Course_listController">
+   <children>
+      <FontAwesomeIconView fill="#57618b" glyphName="BOOK" size="25">
+         <HBox.margin>
+            <Insets left="20.0" />
+         </HBox.margin>
+      </FontAwesomeIconView>
+      <Pane prefHeight="200.0" prefWidth="200.0" />
+      <VBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" prefHeight="55.0" prefWidth="626.0">
+         <children>
+            <Label fx:id="course_name" text="CSC 301 - Structured Programming">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="dept_and_level" text="CSC - Year 3" textFill="#aeaeae">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <Pane prefHeight="200.0" prefWidth="200.0" />
+      <FontAwesomeIconView fill="#57618b" glyphName="CHEVRON_RIGHT" size="20">
+         <HBox.margin>
+            <Insets right="20.0" />
+         </HBox.margin>
+      </FontAwesomeIconView>
+   </children>
+</HBox>

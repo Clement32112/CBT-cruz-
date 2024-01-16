@@ -1,0 +1,1617 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cbt_ca.admin_dashboard.Admin_pageController">
+   <children>
+      <BorderPane fx:id="fromContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" style="-fx-background-color: #eeeeee;">
+         <left>
+            <VBox alignment="CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" style="-fx-background-color: #57618B;" BorderPane.alignment="TOP_CENTER">
+               <children>
+                  <VBox alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="200.0" spacing="10.0" style="-fx-background-color: white;" styleClass="border_top" stylesheets="@admin_page.css">
+                     <children>
+                        <StackPane fx:id="userImage" onMousePressed="#setProfilePicture" prefHeight="0.0" prefWidth="200.0">
+                           <children>
+                              <Circle fx:id="profile_photo" fill="#57618b" radius="50.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                              <Circle fill="DODGERBLUE" radius="55.0" stroke="#aeaeae" strokeType="INSIDE" style="-fx-fill: transparent;" />
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </StackPane>
+                        <Label fx:id="fullName" text="Katniss Everdeen">
+                           <font>
+                              <Font name="Segoe UI Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="emailAddress" text="keverdeen@pau.edu,ng" textFill="#aeaeae">
+                           <font>
+                              <Font name="Segoe UI" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Separator prefWidth="200.0" />
+                     </children>
+                     <padding>
+                        <Insets top="35.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="200.0" spacing="20.0" styleClass="white_background" stylesheets="@admin_page.css">
+                     <children>
+                        <HBox fx:id="register_button" alignment="CENTER_LEFT" maxWidth="-Infinity" minWidth="-Infinity" onMousePressed="#togglePage" prefWidth="180.0" spacing="10.0" stylesheets="@admin_page.css">
+                           <children>
+                              <FontAwesomeIconView glyphName="USER_PLUS" size="20">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </FontAwesomeIconView>
+                              <Label text="Register">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                           <styleClass>
+                              <String fx:value="tab" />
+                              <String fx:value="selected" />
+                           </styleClass>
+                        </HBox>
+                        <HBox fx:id="tests_button" alignment="CENTER_LEFT" maxWidth="-Infinity" minWidth="-Infinity" onMousePressed="#togglePage" prefWidth="180.0" spacing="10.0" styleClass="tab" stylesheets="@admin_page.css">
+                           <children>
+                              <FontAwesomeIconView glyphName="FILE" size="20">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </FontAwesomeIconView>
+                              <Label text="Administer test">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox fx:id="students_button" alignment="CENTER_LEFT" maxWidth="-Infinity" minWidth="-Infinity" onMousePressed="#togglePage" prefWidth="180.0" spacing="10.0" styleClass="tab" stylesheets="@admin_page.css">
+                           <children>
+                              <FontAwesomeIconView glyphName="FOLDER_OPEN" size="25">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </FontAwesomeIconView>
+                              <Label text="Student Records">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets bottom="50.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Pane VBox.vgrow="ALWAYS" />
+                        <Separator prefWidth="200.0" />
+                     </children>
+                     <padding>
+                        <Insets top="50.0" />
+                     </padding>
+                  </VBox>
+                  <VBox fx:id="logOutButton" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" onMousePressed="#logOutUser" prefWidth="200.0" stylesheets="@admin_page.css">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="180.0" spacing="10.0" stylesheets="@admin_page.css">
+                           <children>
+                              <FontAwesomeIconView fill="#d41414" glyphName="SIGN_OUT" size="25">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </FontAwesomeIconView>
+                              <Label text="Sign out" textFill="#d41414">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="25.0" top="25.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <styleClass>
+                        <String fx:value="white_background" />
+                        <String fx:value="signOut" />
+                        <String fx:value="border_bottom" />
+                     </styleClass>
+                  </VBox>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <BorderPane fx:id="register_side" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="703.0" prefWidth="775.0" styleClass="white_background" stylesheets="@admin_page.css">
+                     <top>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="73.0" prefWidth="774.0" style="-fx-background-color: #EBEBEC;" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox fx:id="individualUploadButton" alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" onMousePressed="#switchTab" prefHeight="84.0" prefWidth="220.0" spacing="10.0" styleClass="selected_tab" stylesheets="@../login/login.css">
+                                 <children>
+                                    <FontAwesomeIconView fill="#57618b" glyphName="USER_PLUS" size="25" />
+                                    <Label text="Individual Upload" textFill="#57618b">
+                                       <font>
+                                          <Font name="Segoe UI Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <padding>
+                                    <Insets top="20.0" />
+                                 </padding>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </HBox>
+                              <Rectangle arcHeight="5.0" arcWidth="1.0" fill="WHITE" height="85.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="2.0" />
+                              <HBox fx:id="bulkUploadButton" alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" onMousePressed="#switchTab" prefHeight="84.0" prefWidth="204.0" spacing="15.0">
+                                 <children>
+                                    <FontAwesomeIconView fill="#57618b" glyphName="USERS" size="25" />
+                                    <Label text="Bulk Upload" textFill="#57618b">
+                                       <font>
+                                          <Font name="Segoe UI Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <padding>
+                                    <Insets top="20.0" />
+                                 </padding>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </HBox>
+                              <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/logo-150x150.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets right="30.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                     </top>
+                     <center>
+                        <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="72.0" prefWidth="776.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="72.0" prefWidth="774.0">
+                                       <children>
+                                          <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                          <Label fx:id="lecturrRegisterButton" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMousePressed="#changeRegistrationType" prefHeight="60.0" prefWidth="100.0" text="Lecturer">
+                                             <font>
+                                                <Font name="Segoe UI Bold" size="16.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Label>
+                                          <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                          <Label fx:id="studentRegisterButton" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMousePressed="#changeRegistrationType" prefWidth="100.0" styleClass="currentlyActiveButton" stylesheets="@admin_page.css" text="Student">
+                                             <font>
+                                                <Font name="Segoe UI Bold" size="16.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Label>
+                                          <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <StackPane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="2.0" prefWidth="200.0">
+                                       <children>
+                                          <Separator prefWidth="200.0" />
+                                          <Circle fx:id="activeRegistrationTypeCircle" fill="#57618b" radius="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" translateX="142.0" StackPane.alignment="CENTER" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </StackPane>
+                                 </children>
+                              </VBox>
+                              <StackPane prefHeight="150.0" prefWidth="200.0">
+                                 <children>
+                                    <StackPane fx:id="individualStackPane" prefHeight="150.0" prefWidth="200.0">
+                                       <children>
+                                          <VBox fx:id="indivudualLecturerUploadTab1" alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="558.0" prefWidth="774.0" spacing="20.0" visible="false">
+                                             <children>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                                         <children>
+                                                            <Label maxWidth="1.7976931348623157E308" text="First name">
+                                                               <font>
+                                                                  <Font name="Segoe UI Bold" size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <TextField fx:id="lecturerFirstNameInput" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" promptText="Please enter your first name" />
+                                                            <Label fx:id="firstNameWarning1" alignment="CENTER" prefHeight="18.0" prefWidth="305.0" text="First name cannot be empty" textAlignment="CENTER" textFill="#da0f0f" visible="false">
+                                                               <font>
+                                                                  <Font name="Segoe UI" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                      <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                                         <children>
+                                                            <Label maxWidth="1.7976931348623157E308" text="Last name">
+                                                               <font>
+                                                                  <Font name="Segoe UI Bold" size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <TextField fx:id="lecturerLastNameInput" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" promptText="Please enter your last name" />
+                                                            <Label fx:id="lastNameWarning1" alignment="CENTER" prefHeight="17.0" prefWidth="301.0" text="Last name cannot be empty" textFill="#da0f0f" visible="false">
+                                                               <font>
+                                                                  <Font name="Segoe UI" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                      <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                                         <children>
+                                                            <Label maxWidth="1.7976931348623157E308" text="Phone number">
+                                                               <font>
+                                                                  <Font name="Segoe UI Bold" size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="160.0" styleClass="input_container" stylesheets="@../login/login.css">
+                                                               <children>
+                                                                  <Label alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" text="+234">
+                                                                     <font>
+                                                                        <Font name="Segoe UI" size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                                                                  <TextField fx:id="lecturerPhoneNumberInput" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="248.0" promptText="Please enter your phone number" styleClass="input_field" stylesheets="@../login/login.css" />
+                                                               </children>
+                                                            </HBox>
+                                                            <Label fx:id="phoneNumberWarning1" alignment="CENTER" prefHeight="17.0" prefWidth="308.0" text="Phone number cannot be empty" textAlignment="CENTER" textFill="#da0f0f" visible="false" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                                         <children>
+                                                            <Label maxWidth="1.7976931348623157E308" text="Email address">
+                                                               <font>
+                                                                  <Font name="Segoe UI Bold" size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="160.0" styleClass="input_container" stylesheets="@../login/login.css">
+                                                               <children>
+                                                                  <TextField fx:id="lecturerEmailInput" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="214.0" promptText="Please enter your email address" styleClass="input_field" stylesheets="@../login/login.css" />
+                                                                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="18.0" text="\@pau.edu.ng">
+                                                                     <font>
+                                                                        <Font name="Segoe UI" size="14.0" />
+                                                                     </font>
+                                                                     <HBox.margin>
+                                                                        <Insets />
+                                                                     </HBox.margin>
+                                                                     <padding>
+                                                                        <Insets left="5.0" right="5.0" />
+                                                                     </padding>
+                                                                  </Label>
+                                                               </children>
+                                                            </HBox>
+                                                            <Label fx:id="emailWarning1" alignment="CENTER" prefHeight="18.0" prefWidth="326.0" text="Email address cannot be empty" textFill="#da0f0f" visible="false">
+                                                               <font>
+                                                                  <Font name="Segoe UI" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                      <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                      <VBox maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="305.0" spacing="10.0">
+                                                         <children>
+                                                            <Label maxWidth="1.7976931348623157E308" text="Department">
+                                                               <font>
+                                                                  <Font name="Segoe UI Bold" size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <ComboBox fx:id="lecturerDepartmentComboBox" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" visibleRowCount="4" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                      <HBox alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="310.0">
+                                                         <children>
+                                                            <VBox alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="142.0" spacing="10.0">
+                                                               <children>
+                                                                  <Label maxWidth="1.7976931348623157E308" text="Staff ID">
+                                                                     <font>
+                                                                        <Font name="Segoe UI Bold" size="16.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <TextField fx:id="lecturerStaffIDInput" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="40.0" prefWidth="150.0" promptText="Please enter your ID" />
+                                                                  <Label fx:id="staffIDWarning1" alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="162.0" text="Staff ID cannot be empty" textFill="#da0f0f" visible="false">
+                                                                     <font>
+                                                                        <Font name="Segoe UI" size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                            </VBox>
+                                                            <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#registerLecturer" onMousePressed="#registerStudent" prefHeight="70.0" prefWidth="145.0" styleClass="buttonStyle" stylesheets="@admin_page.css" text="Insert record">
+                                                               <font>
+                                                                  <Font name="Segoe UI Bold" size="16.0" />
+                                                               </font>
+                                                            </Button>
+                                                         </children>
+                                                      </HBox>
+                                                      <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <VBox fx:id="indivudualUploadTab" alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="558.0" prefWidth="774.0" spacing="20.0">
+                                             <children>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                                         <children>
+                                                            <Label maxWidth="1.7976931348623157E308" text="First name">
+                                                               <font>
+                                                                  <Font name="Segoe UI Bold" size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <TextField fx:id="firstNameInput" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" promptText="Please enter your first name" />
+                                                            <Label fx:id="firstNameWarning" alignment="CENTER" prefHeight="18.0" prefWidth="305.0" text="First name cannot be empty" textAlignment="CENTER" textFill="#da0f0f" visible="false">
+                                                               <font>
+                                                                  <Font name="Segoe UI" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                      <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                                         <children>
+                                                            <Label maxWidth="1.7976931348623157E308" text="Last name">
+                                                               <font>
+                                                                  <Font name="Segoe UI Bold" size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <TextField fx:id="lastNameInput" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" promptText="Please enter your last name" />
+                                                            <Label fx:id="lastNameWarning" alignment="CENTER" prefHeight="17.0" prefWidth="301.0" text="Last name cannot be empty" textFill="#da0f0f" visible="false">
+                                                               <font>
+                                                                  <Font name="Segoe UI" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                      <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                                         <children>
+                                                            <Label maxWidth="1.7976931348623157E308" text="Phone number">
+                                                               <font>
+                                                                  <Font name="Segoe UI Bold" size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="160.0" styleClass="input_container" stylesheets="@../login/login.css">
+                                                               <children>
+                                                                  <Label alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" text="+234">
+                                                                     <font>
+                                                                        <Font name="Segoe UI" size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                                                                  <TextField fx:id="phoneNumberInput" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="248.0" promptText="Please enter your phone number" styleClass="input_field" stylesheets="@../login/login.css" />
+                                                               </children>
+                                                            </HBox>
+                                                            <Label fx:id="phoneNumberWarning" alignment="CENTER" prefHeight="17.0" prefWidth="308.0" text="Phone number cannot be empty" textAlignment="CENTER" textFill="#da0f0f" visible="false" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                                         <children>
+                                                            <Label maxWidth="1.7976931348623157E308" text="Matriculation number">
+                                                               <font>
+                                                                  <Font name="Segoe UI Bold" size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <TextField fx:id="matNoInput" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" promptText="Please enter your matriculation number" />
+                                                            <Label fx:id="matNoWarning" alignment="CENTER" prefHeight="18.0" prefWidth="303.0" text="Matriculation number cannot be empty" textFill="#da0f0f" visible="false">
+                                                               <font>
+                                                                  <Font name="Segoe UI" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                      <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                      <HBox maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="307.0">
+                                                         <children>
+                                                            <VBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" minWidth="-Infinity" prefHeight="100.0" prefWidth="142.0" spacing="10.0">
+                                                               <children>
+                                                                  <Label maxWidth="1.7976931348623157E308" text="Date of birth">
+                                                                     <font>
+                                                                        <Font name="Segoe UI Bold" size="16.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <DatePicker fx:id="birthDatePicker" editable="false" maxHeight="-Infinity" prefHeight="40.0" />
+                                                               </children>
+                                                            </VBox>
+                                                            <Pane prefHeight="200.0" prefWidth="200.0" />
+                                                            <VBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" minWidth="-Infinity" prefHeight="100.0" prefWidth="142.0" spacing="10.0">
+                                                               <children>
+                                                                  <Label maxWidth="1.7976931348623157E308" text="Gender">
+                                                                     <font>
+                                                                        <Font name="Segoe UI Bold" size="16.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <ComboBox fx:id="genderComboBox" maxHeight="-Infinity" prefHeight="40.0" prefWidth="150.0" visibleRowCount="2" />
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                      <HBox maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="307.0">
+                                                         <children>
+                                                            <VBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" minWidth="-Infinity" prefHeight="100.0" prefWidth="142.0" spacing="10.0">
+                                                               <children>
+                                                                  <Label maxWidth="1.7976931348623157E308" text="Level">
+                                                                     <font>
+                                                                        <Font name="Segoe UI Bold" size="16.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <ComboBox fx:id="levelComboBox" maxHeight="-Infinity" prefHeight="40.0" prefWidth="150.0" visibleRowCount="4" />
+                                                               </children>
+                                                            </VBox>
+                                                            <Pane prefHeight="200.0" prefWidth="200.0" />
+                                                            <VBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" minWidth="-Infinity" prefHeight="100.0" prefWidth="142.0" spacing="10.0">
+                                                               <children>
+                                                                  <Label maxWidth="1.7976931348623157E308" text="Department">
+                                                                     <font>
+                                                                        <Font name="Segoe UI Bold" size="16.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <ComboBox fx:id="departmentComboBox" maxHeight="-Infinity" prefHeight="40.0" prefWidth="150.0" visibleRowCount="4" />
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                      <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="100.0" spacing="10.0">
+                                                         <children>
+                                                            <Label maxWidth="1.7976931348623157E308" text="Email address">
+                                                               <font>
+                                                                  <Font name="Segoe UI Bold" size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="160.0" styleClass="input_container" stylesheets="@../login/login.css">
+                                                               <children>
+                                                                  <TextField fx:id="emailInput" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="214.0" promptText="Please enter your email address" styleClass="input_field" stylesheets="@../login/login.css" />
+                                                                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="18.0" text="\@pau.edu.ng">
+                                                                     <font>
+                                                                        <Font name="Segoe UI" size="14.0" />
+                                                                     </font>
+                                                                     <HBox.margin>
+                                                                        <Insets />
+                                                                     </HBox.margin>
+                                                                     <padding>
+                                                                        <Insets left="5.0" right="5.0" />
+                                                                     </padding>
+                                                                  </Label>
+                                                               </children>
+                                                            </HBox>
+                                                            <Label fx:id="emailWarning" alignment="CENTER" prefHeight="18.0" prefWidth="326.0" text="Email address cannot be empty" textFill="#da0f0f" visible="false">
+                                                               <font>
+                                                                  <Font name="Segoe UI" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                      <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                      <HBox alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="310.0">
+                                                         <children>
+                                                            <VBox alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="142.0" spacing="10.0">
+                                                               <children>
+                                                                  <Label maxWidth="1.7976931348623157E308" text="Staff ID">
+                                                                     <font>
+                                                                        <Font name="Segoe UI Bold" size="16.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <TextField fx:id="staffIDInput" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="40.0" prefWidth="150.0" promptText="Please enter your ID" />
+                                                                  <Label fx:id="staffIDWarning" alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="162.0" text="Staff ID cannot be empty" textFill="#da0f0f" visible="false">
+                                                                     <font>
+                                                                        <Font name="Segoe UI" size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                            </VBox>
+                                                            <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#registerStudent" prefHeight="70.0" prefWidth="145.0" styleClass="buttonStyle" stylesheets="@admin_page.css" text="Insert record">
+                                                               <font>
+                                                                  <Font name="Segoe UI Bold" size="16.0" />
+                                                               </font>
+                                                            </Button>
+                                                         </children>
+                                                      </HBox>
+                                                      <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane fx:id="bulkStackPane" prefHeight="150.0" prefWidth="200.0" visible="false">
+                                       <children>
+                                          <VBox fx:id="bulkUploadTab" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="805.0" spacing="50.0">
+                                             <children>
+                                                <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="250.0" prefWidth="400.0" spacing="20.0" style="-fx-border-color: #ececec; -fx-border-style: dotted; -fx-border-width: 3px;">
+                                                   <children>
+                                                      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #ececec;">
+                                                         <children>
+                                                            <FontAwesomeIconView glyphName="UPLOAD" size="30" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Label text="Click the button below to upload a new file">
+                                                         <font>
+                                                            <Font name="Segoe UI Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="You can only upload one file" textFill="#aeaeae" />
+                                                   </children>
+                                                </VBox>
+                                                <HBox fx:id="uploadButton" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMousePressed="#uploadDocument" spacing="15.0" style="-fx-background-color: #57618B; -fx-background-radius: 2px;">
+                                                   <children>
+                                                      <FontAwesomeIconView fill="WHITE" glyphName="PLUS_CIRCLE" size="25" />
+                                                      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1.0" />
+                                                      <Label text="Upload CSV" textFill="WHITE">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                                                   </padding>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <HBox fx:id="tableContainer" alignment="BOTTOM_LEFT" maxHeight="-Infinity" minHeight="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="557.0" prefWidth="805.0" visible="false">
+                                             <children>
+                                                <VBox alignment="CENTER" prefHeight="557.0" prefWidth="140.0" spacing="25.0">
+                                                   <children>
+                                                      <VBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" prefWidth="100.0" spacing="10.0">
+                                                         <children>
+                                                            <Label alignment="CENTER_RIGHT" maxWidth="120.0" text="Staff ID">
+                                                               <font>
+                                                                  <Font name="Segoe UI Bold" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <TextField fx:id="staffIDField" alignment="CENTER_RIGHT" focusTraversable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="110.0" promptText="Enter staff ID" />
+                                                            <Label fx:id="staffIDwarning" text="Invalid staff ID" textFill="#d71b1b" visible="false" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#deleteOneRow" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #57618B;" text="Delete Row" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="Segoe UI" size="14.0" />
+                                                         </font>
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                      </Button>
+                                                      <Button focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#deleteAllrows" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #57618B;" text="Delete All" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="Segoe UI" size="14.0" />
+                                                         </font>
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                      </Button>
+                                                      <Button cancelButton="true" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#closeTable" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #D41414;" text="Cancel Upload" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="Segoe UI" size="14.0" />
+                                                         </font>
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                      </Button>
+                                                      <Button focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#uploadTable" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #4bb543;" text="Upload Table" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="Segoe UI" size="14.0" />
+                                                         </font>
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                      </Button>
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets left="20.0" />
+                                                   </HBox.margin>
+                                                </VBox>
+                                                <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="540.0" prefWidth="623.0">
+                                                   <content>
+                                                      <TableView fx:id="adminRegisterTable" editable="true" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="557.0" prefWidth="1069.0">
+                                                         <columns>
+                                                            <TableColumn fx:id="first_name_column" prefWidth="133.0" sortable="false" text="first_name" />
+                                                            <TableColumn fx:id="last_name_column" prefWidth="138.0" sortable="false" text="last_name" />
+                                                            <TableColumn fx:id="phone_number_column" prefWidth="136.0" sortable="false" text="phone_number" />
+                                                            <TableColumn fx:id="mat_number_column" prefWidth="118.0" sortable="false" text="mat_number" />
+                                                            <TableColumn fx:id="date_of_birth_column" minWidth="2.0" prefWidth="105.0" sortable="false" text="date_of_birth" />
+                                                            <TableColumn fx:id="gender_column" prefWidth="72.0" sortable="false" text="gender" />
+                                                            <TableColumn fx:id="level_column" prefWidth="72.0" sortable="false" text="level" />
+                                                            <TableColumn fx:id="department_column" prefWidth="84.0" sortable="false" text="department" />
+                                                            <TableColumn fx:id="email_column" prefWidth="210.0" sortable="false" text="email" />
+                                                         </columns>
+                                                      </TableView>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                          </HBox>
+                                          <HBox fx:id="lecturerTableContainer" alignment="BOTTOM_LEFT" maxHeight="-Infinity" minHeight="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="557.0" prefWidth="805.0" visible="false">
+                                             <children>
+                                                <VBox alignment="CENTER" prefHeight="533.0" prefWidth="140.0" spacing="25.0">
+                                                   <children>
+                                                      <VBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" prefWidth="100.0" spacing="10.0">
+                                                         <children>
+                                                            <Label alignment="CENTER_RIGHT" maxWidth="120.0" text="Staff ID">
+                                                               <font>
+                                                                  <Font name="Segoe UI Bold" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <TextField fx:id="staffIDFieldLecturer" alignment="CENTER_RIGHT" focusTraversable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="120.0" promptText="Enter staff ID" />
+                                                            <Label fx:id="staffIDwarningLecturer" text="Invalid staff ID" textFill="#d71b1b" visible="false" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#deleteOneRowLecturer" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #57618B;" text="Delete Row" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="Segoe UI" size="14.0" />
+                                                         </font>
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                      </Button>
+                                                      <Button focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#deleteAllrowsLecturer" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #57618B;" text="Delete All" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="Segoe UI" size="14.0" />
+                                                         </font>
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                      </Button>
+                                                      <Button cancelButton="true" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#closeTableLecturer" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #D41414;" text="Cancel Upload" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="Segoe UI" size="14.0" />
+                                                         </font>
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                      </Button>
+                                                      <Button focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#uploadTableLecturer" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #4bb543;" text="Upload Table" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="Segoe UI" size="14.0" />
+                                                         </font>
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                      </Button>
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets left="20.0" />
+                                                   </HBox.margin>
+                                                </VBox>
+                                                <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="540.0" prefWidth="619.0">
+                                                   <content>
+                                                      <TableView fx:id="adminRegisterTableLecturer" editable="true" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="557.0" prefWidth="789.0">
+                                                         <columns>
+                                                            <TableColumn fx:id="first_name_column_lecturer" prefWidth="154.0" text="first_name" />
+                                                            <TableColumn fx:id="last_name_column_lecturer" prefWidth="176.0" text="last_name" />
+                                                            <TableColumn fx:id="phone_number_column_lecturer" prefWidth="157.0" text="phone_number" />
+                                                            <TableColumn fx:id="department_column_lecturer" prefWidth="100.0" text="department" />
+                                                            <TableColumn fx:id="email_column_lecturer" prefWidth="199.0" text="email" />
+                                                         </columns>
+                                                      </TableView>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </VBox>
+                     </center>
+                  </BorderPane>
+                  <BorderPane fx:id="test_side" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" prefHeight="703.0" prefWidth="773.0" visible="false">
+                     <center>
+                        <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <StackPane fx:id="registerCoursesStackPane" alignment="TOP_CENTER" prefHeight="150.0" prefWidth="773.0">
+                                 <children>
+                                    <Label text="Courses" StackPane.alignment="TOP_LEFT">
+                                       <font>
+                                          <Font name="Segoe UI Bold" size="24.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets left="20.0" top="40.0" />
+                                       </StackPane.margin>
+                                    </Label>
+                                    <AnchorPane fx:id="listOfCoursesContainerAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="773.0" StackPane.alignment="BOTTOM_LEFT">
+                                       <children>
+                                          <StackPane layoutX="24.0" layoutY="44.0" prefHeight="589.0" prefWidth="608.0">
+                                             <children>
+                                                <ScrollPane fx:id="courseListScrollPane" hbarPolicy="NEVER" prefHeight="590.0" prefWidth="500.0" style="-fx-background-color: white;" stylesheets="@admin_page.css" vbarPolicy="NEVER">
+                                                   <content>
+                                                      <VBox fx:id="courseContainerVBox" alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="615.0" prefWidth="614.0" spacing="20.0" style="-fx-background-color: white;" stylesheets="@admin_page.css">
+                                                         <opaqueInsets>
+                                                            <Insets top="20.0" />
+                                                         </opaqueInsets>
+                                                         <padding>
+                                                            <Insets top="25.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                   </content>
+                                                </ScrollPane>
+                                                <VBox fx:id="noContentVBox" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" visible="false">
+                                                   <children>
+                                                      <Label text="No course registered yet">
+                                                         <font>
+                                                            <Font name="Segoe UI" size="24.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="click the button on the bottom right to add a new course" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </StackPane>
+                                          <VBox alignment="CENTER" layoutX="572.0" layoutY="481.0" onMousePressed="#closeListOfCourses" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: #57618B; -fx-background-radius: 100;">
+                                             <children>
+                                                <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="30" />
+                                             </children>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                    <VBox fx:id="registerCourseContainer" maxWidth="-Infinity" prefHeight="613.0" prefWidth="650.0" spacing="20.0" visible="false" StackPane.alignment="CENTER">
+                                       <children>
+                                          <Label text="Register a new course" textFill="#57618b">
+                                             <font>
+                                                <Font name="Segoe UI Bold" size="24.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets bottom="40.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" prefWidth="100.0" spacing="10.0">
+                                                   <children>
+                                                      <Label maxWidth="1.7976931348623157E308" text="Course name">
+                                                         <font>
+                                                            <Font name="Segoe UI Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="courseName" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" promptText="Please enter the course name" />
+                                                      <Label fx:id="courseNameWarning" alignment="CENTER" prefHeight="18.0" prefWidth="305.0" text="Course name cannot be empty" textAlignment="CENTER" textFill="#da0f0f" visible="false">
+                                                         <font>
+                                                            <Font name="Segoe UI" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
+                                                <Pane prefHeight="200.0" prefWidth="200.0" />
+                                                <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="100.0" spacing="10.0">
+                                                   <children>
+                                                      <Label maxWidth="1.7976931348623157E308" text="Course code">
+                                                         <font>
+                                                            <Font name="Segoe UI Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="courseCode" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" promptText="Please enter the course code" />
+                                                      <Label fx:id="courseCodeWarning" alignment="CENTER" prefHeight="17.0" prefWidth="301.0" text="Course code cannot be empty" textFill="#da0f0f" visible="false">
+                                                         <font>
+                                                            <Font name="Segoe UI" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <VBox alignment="CENTER_LEFT" minWidth="-Infinity" prefHeight="100.0" prefWidth="298.0" spacing="10.0">
+                                                   <children>
+                                                      <Label maxWidth="1.7976931348623157E308" text="Department">
+                                                         <font>
+                                                            <Font name="Segoe UI Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ComboBox fx:id="courseDepartmentComboBox" maxHeight="-Infinity" prefHeight="40.0" prefWidth="300.0" visibleRowCount="4" />
+                                                   </children>
+                                                </VBox>
+                                                <Pane prefHeight="200.0" prefWidth="200.0" />
+                                                <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="300.0" spacing="10.0">
+                                                   <children>
+                                                      <Label maxWidth="1.7976931348623157E308" text="Level">
+                                                         <font>
+                                                            <Font name="Segoe UI Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ComboBox fx:id="courseLevelComboBox" maxHeight="-Infinity" prefHeight="40.0" prefWidth="301.0" visibleRowCount="4" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="100.0" spacing="10.0">
+                                                   <children>
+                                                      <Label maxWidth="1.7976931348623157E308" text="Staff ID">
+                                                         <font>
+                                                            <Font name="Segoe UI Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="courseStaffIDInput" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" promptText="Please enter your staff ID" />
+                                                      <Label fx:id="staffIDCourseWarning" alignment="CENTER" prefHeight="18.0" prefWidth="305.0" text="Staff ID cannot be empty" textAlignment="CENTER" textFill="#da0f0f" visible="false">
+                                                         <font>
+                                                            <Font name="Segoe UI" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
+                                                <Pane prefHeight="200.0" prefWidth="200.0" />
+                                                <Button maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#createANewCourse" prefHeight="100.0" prefWidth="153.0" styleClass="buttonStyle" stylesheets="@admin_page.css" text="Create course">
+                                                   <font>
+                                                      <Font name="Segoe UI Bold" size="16.0" />
+                                                   </font>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <Label alignment="CENTER_RIGHT" onMousePressed="#closeCourseRegisterPage" prefHeight="19.0" prefWidth="134.0" text="Back to course list" textAlignment="RIGHT" textFill="#57618b">
+                                                   <font>
+                                                      <Font name="Segoe UI" size="16.0" />
+                                                   </font>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <StackPane.margin>
+                                          <Insets top="120.0" />
+                                       </StackPane.margin>
+                                    </VBox>
+                                 </children>
+                              </StackPane>
+                              <BorderPane fx:id="testConfigBorderPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" visible="false">
+                                 <top>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="73.0" prefWidth="773.0" style="-fx-background-color: #ececec;" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <HBox fx:id="setQuestionTab" alignment="CENTER" onMousePressed="#switchQuestionTab" prefHeight="100.0" prefWidth="220.0" spacing="15.0" styleClass="white_background" stylesheets="@admin_page.css">
+                                             <children>
+                                                <FontAwesomeIconView fill="#57618b" glyphName="FILE" size="25" />
+                                                <Label text="Add Questions" textFill="#57618b">
+                                                   <font>
+                                                      <Font name="Segoe UI Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                             <padding>
+                                                <Insets top="10.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox fx:id="setTestTab" alignment="CENTER" onMousePressed="#switchQuestionTab" prefHeight="100.0" prefWidth="220.0" spacing="15.0" stylesheets="@admin_page.css">
+                                             <children>
+                                                <FontAwesomeIconView fill="#57618b" glyphName="QUESTION" size="25" />
+                                                <Label text="Setup Test" textFill="#57618b">
+                                                   <font>
+                                                      <Font name="Segoe UI Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                             <padding>
+                                                <Insets top="10.0" />
+                                             </padding>
+                                          </HBox>
+                                          <Pane prefHeight="86.0" prefWidth="273.0" />
+                                          <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/logo-150x150.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets right="40.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                       </children>
+                                       <BorderPane.margin>
+                                          <Insets bottom="20.0" />
+                                       </BorderPane.margin>
+                                    </HBox>
+                                 </top>
+                                 <center>
+                                    <StackPane prefHeight="150.0" prefWidth="650.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <BorderPane fx:id="setQuestionBorderPane" prefHeight="200.0" prefWidth="200.0">
+                                             <right>
+                                                <VBox alignment="TOP_CENTER" prefHeight="583.0" prefWidth="141.0" BorderPane.alignment="CENTER">
+                                                   <children>
+                                                      <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#insertQuestionFromFile" prefHeight="90.0" prefWidth="110.0" style="-fx-background-radius: 5;" styleClass="buttonStyle" stylesheets="@admin_page.css" text="Insert from file">
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Pane prefHeight="200.0" prefWidth="200.0" />
+                                                      <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#createNewRow" prefHeight="90.0" prefWidth="110.0" style="-fx-background-radius: 5;" styleClass="buttonStyle" stylesheets="@admin_page.css" text="Insert row">
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Pane prefHeight="200.0" prefWidth="200.0" />
+                                                      <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteQuestionRow" prefHeight="90.0" prefWidth="110.0" style="-fx-background-radius: 5; -fx-background-color: #D41414;" styleClass="buttonStyle" stylesheets="@admin_page.css" text="Delete row">
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Pane prefHeight="200.0" prefWidth="200.0" />
+                                                      <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#emptyQuestionTable" prefHeight="90.0" prefWidth="110.0" style="-fx-background-radius: 5; -fx-background-color: #D41414;" styleClass="buttonStyle" stylesheets="@admin_page.css" text="Empty table">
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Pane prefHeight="200.0" prefWidth="200.0" />
+                                                      <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#uploadTableToDatabase" prefHeight="90.0" prefWidth="110.0" style="-fx-background-radius: 5; -fx-background-color: #1AA227;" styleClass="buttonStyle" stylesheets="@admin_page.css" text="Upload table">
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Pane prefHeight="200.0" prefWidth="200.0" />
+                                                      <HBox alignment="CENTER" maxWidth="-Infinity" onMousePressed="#clolseQuestionContainer" prefHeight="20.0" prefWidth="112.0" spacing="15.0">
+                                                         <children>
+                                                            <FontAwesomeIconView fill="#57618b" glyphName="CHEVRON_LEFT" size="20" />
+                                                            <Label text="Go Back" textFill="#57618b">
+                                                               <font>
+                                                                  <Font name="Segoe UI" size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                      </HBox>
+                                                   </children>
+                                                   <BorderPane.margin>
+                                                      <Insets bottom="20.0" top="10.0" />
+                                                   </BorderPane.margin>
+                                                </VBox>
+                                             </right>
+                                             <center>
+                                                <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                                   <BorderPane.margin>
+                                                      <Insets left="10.0" />
+                                                   </BorderPane.margin>
+                                                   <content>
+                                                      <TableView fx:id="questionsTable" editable="true" prefHeight="620.0">
+                                                        <columns>
+                                                          <TableColumn fx:id="question_column" maxWidth="350.0" prefWidth="350.0" sortable="false" text="Question" />
+                                                          <TableColumn fx:id="option_a_column" maxWidth="200.0" prefWidth="200.0" sortable="false" text="Option A" />
+                                                            <TableColumn fx:id="option_b_column" maxWidth="200.0" prefWidth="200.0" sortable="false" text="Option B" />
+                                                            <TableColumn fx:id="option_c_column" maxWidth="200.0" prefWidth="200.0" sortable="false" text="Option C" />
+                                                            <TableColumn fx:id="option_d_column" maxWidth="200.0" prefWidth="200.0" sortable="false" text="Option D" />
+                                                            <TableColumn fx:id="correct_option_column" maxWidth="120.0" prefWidth="120.0" sortable="false" text="Correct Option" />
+                                                        </columns>
+                                                      </TableView>
+                                                   </content>
+                                                </ScrollPane>
+                                             </center>
+                                          </BorderPane>
+                                          <VBox fx:id="setTestPane" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="30.0" visible="false" StackPane.alignment="CENTER">
+                                             <children>
+                                                <VBox alignment="CENTER_LEFT" maxWidth="-Infinity" minHeight="-Infinity" prefWidth="350.0" spacing="10.0">
+                                                   <children>
+                                                      <Label text="Test Name">
+                                                         <font>
+                                                            <Font name="Segoe UI" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="testNameInput" prefHeight="45.0" promptText="Enter the name of the test">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <Label fx:id="testNameWarningTest" alignment="CENTER" prefHeight="17.0" prefWidth="353.0" text="Test name cannot be empty" textAlignment="JUSTIFY" textFill="#d41414" visible="false" />
+                                                   </children>
+                                                </VBox>
+                                                <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="350.0" spacing="10.0">
+                                                   <children>
+                                                      <Label maxWidth="1.7976931348623157E308" text="Test Duration">
+                                                         <font>
+                                                            <Font name="Segoe UI" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <HBox maxHeight="-Infinity" minHeight="-Infinity" prefWidth="200.0">
+                                                         <children>
+                                                            <ComboBox fx:id="hoursComboBox" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="40.0" prefWidth="170.0" promptText="hours" visibleRowCount="4" />
+                                                            <Pane prefWidth="200.0" />
+                                                            <ComboBox fx:id="minutesComboBox" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="40.0" prefWidth="170.0" promptText="minutes" visibleRowCount="4" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                                <HBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="350.0" spacing="10.0">
+                                                   <children>
+                                                      <VBox maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="170.0" spacing="10.0">
+                                                         <children>
+                                                            <Label text="Test Date">
+                                                               <font>
+                                                                  <Font name="Segoe UI" size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <DatePicker fx:id="testDatePicker" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="350.0" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="170.0" spacing="10.0">
+                                                         <children>
+                                                            <Label maxWidth="1.7976931348623157E308" text="Test Time">
+                                                               <font>
+                                                                  <Font name="Segoe UI" size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="170.0">
+                                                               <children>
+                                                                  <ComboBox fx:id="hourTimeComboBox" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="40.0" prefWidth="84.0" promptText="hours" visibleRowCount="4" />
+                                                                  <Pane prefWidth="200.0" />
+                                                                  <ComboBox fx:id="minuteTimeComboBox" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="40.0" prefWidth="84.0" promptText="minutes" visibleRowCount="4" />
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="350.0" spacing="10.0">
+                                                   <children>
+                                                      <Label maxWidth="1.7976931348623157E308" text="Number Of Questions">
+                                                         <font>
+                                                            <Font name="Segoe UI" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ComboBox fx:id="numberOfQuestionsComboBox" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="40.0" prefWidth="170.0" visibleRowCount="4" />
+                                                   </children>
+                                                </VBox>
+                                                <HBox alignment="BOTTOM_LEFT" prefWidth="200.0">
+                                                   <children>
+                                                      <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" onMousePressed="#clolseQuestionContainer" prefWidth="112.0" spacing="15.0">
+                                                         <children>
+                                                            <FontAwesomeIconView fill="#57618b" glyphName="CHEVRON_LEFT" size="20" />
+                                                            <Label text="Go Back" textFill="#57618b">
+                                                               <font>
+                                                                  <Font name="Segoe UI" size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                         <HBox.margin>
+                                                            <Insets left="25.0" right="75.0" />
+                                                         </HBox.margin>
+                                                      </HBox>
+                                                      <Button alignment="CENTER" mnemonicParsing="false" onAction="#scheduleTest" prefHeight="80.0" prefWidth="350.0" styleClass="buttonStyle" stylesheets="@admin_page.css" text="Schedule Test">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets top="20.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </StackPane>
+                                 </center>
+                              </BorderPane>
+                           </children>
+                        </StackPane>
+                     </center></BorderPane>
+                  <BorderPane fx:id="students_side" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="772.0" style="-fx-background-color: white;" visible="false">
+                     <top>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="73.0" prefWidth="774.0" style="-fx-background-color: #EBEBEC;" styleClass="selected_tab" stylesheets="@admin_page.css" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox fx:id="studentRecordTabButton" alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" onMousePressed="#switchStudentTab" prefHeight="84.0" prefWidth="220.0" spacing="10.0" styleClass="selected_tab" stylesheets="@../login/login.css">
+                                 <children>
+                                    <FontAwesomeIconView fill="#57618b" glyphName="USER" size="25" />
+                                    <Label text="Student Details" textFill="#57618b">
+                                       <font>
+                                          <Font name="Segoe UI Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <padding>
+                                    <Insets top="20.0" />
+                                 </padding>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </HBox>
+                              <Rectangle arcHeight="5.0" arcWidth="1.0" fill="WHITE" height="85.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="2.0" />
+                              <HBox fx:id="studentScoresTabButton" alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" onMousePressed="#switchStudentTab" prefHeight="84.0" prefWidth="204.0" spacing="15.0">
+                                 <children>
+                                    <FontAwesomeIconView fill="#57618b" glyphName="GRADUATION_CAP" size="25" />
+                                    <Label text="Test Scores" textFill="#57618b">
+                                       <font>
+                                          <Font name="Segoe UI Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <padding>
+                                    <Insets top="20.0" />
+                                 </padding>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </HBox>
+                              <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/logo-150x150.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets right="30.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                     </top>
+                     <center>
+                        <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <VBox fx:id="studentDetailsTab" alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="558.0" prefWidth="774.0" spacing="20.0">
+                                 <children>
+                                    <HBox alignment="TOP_RIGHT" prefWidth="200.0" spacing="15.0">
+                                       <children>
+                                          <Button fx:id="resetUserPasswordButton" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#resetUserPassword" onMousePressed="#registerStudent" prefHeight="50.0" prefWidth="159.0" styleClass="buttonStyle" stylesheets="@admin_page.css" text="Reset Password">
+                                             <font>
+                                                <Font name="Segoe UI Bold" size="16.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="60.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Pane HBox.hgrow="ALWAYS" />
+                                          <HBox alignment="CENTER" spacing="10.0" style="-fx-border-color: #aeaeae; -fx-border-radius: 5;">
+                                             <children>
+                                                <TextField fx:id="matNumberQueryField" maxHeight="1.7976931348623157E308" prefWidth="160.0" promptText="Enter matriculation number" styleClass="white_background" stylesheets="@admin_page.css">
+                                                   <font>
+                                                      <Font name="Segoe UI" size="12.0" />
+                                                   </font>
+                                                </TextField>
+                                                <FontAwesomeIconView fill="#aeaeae" glyphName="SEARCH" size="15" />
+                                             </children>
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                             <padding>
+                                                <Insets left="10.0" right="10.0" />
+                                             </padding>
+                                          </HBox>
+                                          <Button fx:id="searchButton" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#searchForAStudent" prefHeight="50.0" prefWidth="120.0" styleClass="buttonStyle" stylesheets="@admin_page.css" text="Search">
+                                             <font>
+                                                <Font name="Segoe UI Bold" size="16.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets right="60.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                          <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                             <children>
+                                                <Label maxWidth="1.7976931348623157E308" text="First name">
+                                                   <font>
+                                                      <Font name="Segoe UI Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="firstNameSearchValue" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" promptText="Please enter your first name" />
+                                                <Label fx:id="firstNameSearchWarning" alignment="CENTER" prefHeight="18.0" prefWidth="305.0" text="First name cannot be empty" textAlignment="CENTER" textFill="#da0f0f" visible="false">
+                                                   <font>
+                                                      <Font name="Segoe UI" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                          <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                             <children>
+                                                <Label maxWidth="1.7976931348623157E308" text="Last name">
+                                                   <font>
+                                                      <Font name="Segoe UI Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="lastNameSearchValue" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" promptText="Please enter your last name" />
+                                                <Label fx:id="lastNameSearchWarning" alignment="CENTER" prefHeight="17.0" prefWidth="301.0" text="Last name cannot be empty" textFill="#da0f0f" visible="false">
+                                                   <font>
+                                                      <Font name="Segoe UI" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                          <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                             <children>
+                                                <Label maxWidth="1.7976931348623157E308" text="Phone number">
+                                                   <font>
+                                                      <Font name="Segoe UI Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="160.0" styleClass="input_container" stylesheets="@../login/login.css">
+                                                   <children>
+                                                      <Label alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" text="+234">
+                                                         <font>
+                                                            <Font name="Segoe UI" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Separator orientation="VERTICAL" prefHeight="200.0" />
+                                                      <TextField fx:id="phoneNumberSearchValue" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="248.0" promptText="Please enter your phone number" styleClass="input_field" stylesheets="@../login/login.css" />
+                                                   </children>
+                                                </HBox>
+                                                <Label fx:id="phoneNumberSearchWarning" alignment="CENTER" prefHeight="17.0" prefWidth="308.0" text="Phone number cannot be empty" textAlignment="CENTER" textFill="#da0f0f" visible="false" />
+                                             </children>
+                                          </VBox>
+                                          <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                          <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                             <children>
+                                                <Label maxWidth="1.7976931348623157E308" text="Matriculation number">
+                                                   <font>
+                                                      <Font name="Segoe UI Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="matNoSearchValue" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" promptText="Please enter your matriculation number" />
+                                                <Label fx:id="matNoSearchWarning" alignment="CENTER" prefHeight="18.0" prefWidth="303.0" text="Matriculation number cannot be empty" textFill="#da0f0f" visible="false">
+                                                   <font>
+                                                      <Font name="Segoe UI" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                          <HBox maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="307.0">
+                                             <children>
+                                                <VBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" minWidth="-Infinity" prefHeight="100.0" prefWidth="142.0" spacing="10.0">
+                                                   <children>
+                                                      <Label maxWidth="1.7976931348623157E308" text="Date of birth">
+                                                         <font>
+                                                            <Font name="Segoe UI Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <DatePicker fx:id="birthDatePickerSearchValue" editable="false" maxHeight="-Infinity" prefHeight="40.0" />
+                                                   </children>
+                                                </VBox>
+                                                <Pane prefHeight="200.0" prefWidth="200.0" />
+                                                <VBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" minWidth="-Infinity" prefHeight="100.0" prefWidth="142.0" spacing="10.0">
+                                                   <children>
+                                                      <Label maxWidth="1.7976931348623157E308" text="Gender">
+                                                         <font>
+                                                            <Font name="Segoe UI Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ComboBox fx:id="genderSearchValue" maxHeight="-Infinity" prefHeight="40.0" prefWidth="150.0" visibleRowCount="2" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                          <HBox maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="307.0">
+                                             <children>
+                                                <VBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" minWidth="-Infinity" prefHeight="100.0" prefWidth="142.0" spacing="10.0">
+                                                   <children>
+                                                      <Label maxWidth="1.7976931348623157E308" text="Level">
+                                                         <font>
+                                                            <Font name="Segoe UI Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ComboBox fx:id="levelSearchValue" maxHeight="-Infinity" prefHeight="40.0" prefWidth="150.0" visibleRowCount="4" />
+                                                   </children>
+                                                </VBox>
+                                                <Pane prefHeight="200.0" prefWidth="200.0" />
+                                                <VBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" minWidth="-Infinity" prefHeight="100.0" prefWidth="142.0" spacing="10.0">
+                                                   <children>
+                                                      <Label maxWidth="1.7976931348623157E308" text="Department">
+                                                         <font>
+                                                            <Font name="Segoe UI Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ComboBox fx:id="departmentSearchValue" maxHeight="-Infinity" prefHeight="40.0" prefWidth="150.0" visibleRowCount="4" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                          <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="100.0" spacing="10.0">
+                                             <children>
+                                                <Label maxWidth="1.7976931348623157E308" text="Email address">
+                                                   <font>
+                                                      <Font name="Segoe UI Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="160.0" styleClass="input_container" stylesheets="@../login/login.css">
+                                                   <children>
+                                                      <TextField fx:id="emailSearchValue" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="214.0" promptText="Please enter your email address" styleClass="input_field" stylesheets="@../login/login.css" />
+                                                      <Separator orientation="VERTICAL" prefHeight="200.0" />
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="18.0" text="\@pau.edu.ng">
+                                                         <font>
+                                                            <Font name="Segoe UI" size="14.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                         <padding>
+                                                            <Insets left="5.0" right="5.0" />
+                                                         </padding>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <Label fx:id="emailWarning2" alignment="CENTER" prefHeight="18.0" prefWidth="326.0" text="Email address cannot be empty" textFill="#da0f0f" visible="false">
+                                                   <font>
+                                                      <Font name="Segoe UI" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                          <HBox alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="310.0">
+                                             <children>
+                                                <Button fx:id="deleteStudentButton" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteTheStudent" prefHeight="70.0" prefWidth="145.0" style="-fx-background-color: #D41414; -fx-text-fill: white;" stylesheets="@admin_page.css" text="Delete Record">
+                                                   <font>
+                                                      <Font name="Segoe UI Bold" size="16.0" />
+                                                   </font>
+                                                </Button>
+                                                <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                <Button fx:id="updateButton" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#updateStudentRecord" prefHeight="70.0" prefWidth="145.0" style="-fx-background-color: #1AA227; -fx-text-fill: white;" stylesheets="@admin_page.css" text="Update Record">
+                                                   <font>
+                                                      <Font name="Segoe UI Bold" size="16.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                          <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox fx:id="studentTestScoresTab" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="200.0" prefWidth="700.0" spacing="15.0" visible="false">
+                                 <children>
+                                    <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308">
+                                       <children>
+                                          <Button fx:id="downlooadTableButton" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#downloadScoresAsCSV" prefHeight="70.0" prefWidth="185.0" styleClass="buttonStyle" stylesheets="@admin_page.css" text="Download As CSV">
+                                             <font>
+                                                <Font name="Segoe UI Bold" size="16.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                          <Pane HBox.hgrow="ALWAYS" />
+                                          <HBox alignment="CENTER" maxHeight="-Infinity" spacing="20.0">
+                                             <children>
+                                                <Label text="Filter">
+                                                   <font>
+                                                      <Font name="Segoe UI" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <ComboBox fx:id="filterMode" maxHeight="-Infinity" prefHeight="50.0" prefWidth="150.0" style="-fx-border-width: 1; -fx-border-color: #aeaeae;" styleClass="white_background" stylesheets="@admin_page.css" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="540.0" prefWidth="703.0">
+                                       <content>
+                                          <TableView fx:id="testScoreTable" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="557.0" prefWidth="789.0">
+                                             <columns>
+                                                <TableColumn fx:id="test_name_column" editable="false" prefWidth="189.0" resizable="false" text="test_name" />
+                                                <TableColumn fx:id="mat_number_score_column" editable="false" prefWidth="147.0" resizable="false" text="mat_number" />
+                                                <TableColumn fx:id="number_of_questions_column" editable="false" prefWidth="128.0" resizable="false" text="number_of_questions" />
+                                                <TableColumn fx:id="score_column" editable="false" prefWidth="74.0" resizable="false" text="score" />
+                                                <TableColumn fx:id="selected_optons_column" editable="false" maxWidth="-Infinity" minWidth="150.0" prefWidth="150.0" resizable="false" text="selected_options" />
+                                             </columns>
+                                          </TableView>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                     </center></BorderPane>
+               </children>
+            </StackPane>
+         </center>
+      </BorderPane>
+      <VBox fx:id="errorDialogBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="300.0" spacing="15.0" style="-fx-background-color: #ececec;" visible="false">
+         <children>
+            <VBox alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="10.0" prefWidth="10.0" style="-fx-background-color: white;" visible="false">
+               <children>
+                  <FontAwesomeIconView fill="#da0f0f" glyphName="WARNING" size="50" text="" />
+               </children>
+            </VBox>
+            <Label text="Error">
+               <font>
+                  <Font name="Segoe UI Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="errorMessage" text="Invalid email or password">
+               <font>
+                  <Font name="Segoe UI Bold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Label>
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#closeErrorDialogBox" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #da0f0f;" styleClass="submit_button_style" stylesheets="@../login/login.css" text="Close" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <VBox fx:id="successDialogBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="300.0" spacing="15.0" style="-fx-background-color: #ececec;" visible="false">
+         <children>
+            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="35.0" style="-fx-background-color: white;">
+               <children>
+                  <FontAwesomeIconView fill="#4bb543" glyphName="CHECK_CIRCLE" size="60" />
+               </children>
+            </VBox>
+            <Label text="Success">
+               <font>
+                  <Font name="Segoe UI Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="sucessMessage" text="Student registered successfully">
+               <font>
+                  <Font name="Segoe UI Bold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Label>
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#closeErrorDialogBox" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #4BB543;" styleClass="submit_button_style" stylesheets="@../login/login.css" text="Close" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</StackPane>
